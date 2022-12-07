@@ -22,9 +22,11 @@ Start a container <br>
 vendor/bin/sail up -d 
 
 Migrate tables with: <br>
-vendor/bin/sail migrate
+vendor/bin/sail artisan migrate
 
 There is possibility that You can catch logger permision error, so You need to: <br>
+
+You can do vendor/bin/sail artisan optimize or if it will not help, then: <br>
 
 chown -R www-data:www-data storage/ <br>
 chmod -R 0775 storage <br>
@@ -33,15 +35,11 @@ chown -R www-data:www-data bootstrap/ <br>
 chmod -R 0775 bootstrap <br>
 
 
-
-
 If you are testing api with Postman, then you should add  <br>
 X-Requested-With:XMLHttpRequest <br>
 To prevent validator sending you to web welcome page when sending invalid data
 
 By default api will be opened at <url>http://localhost</url>
-
-
 
 <br>
 P.S Postman data located in postman file;
