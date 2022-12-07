@@ -107,10 +107,15 @@ final class FileHelper
 			$path = storage_path('app/public/'.$this->authModel->base_path);
 			$bool = exec('mv ' . $file->path.'/'.$file->file_name. ' '. $path.'/'.$file->file_name);
 			$file->path = $path;
+			$oldFolder?->getSizeOfFiles();
 		} else{
 			$path = $file->folder->path;
                 	$bool = exec('mv ' . $file->path.'/'.$file->file_name. ' '. $path.'/'.$file->file_name);
 			$file->path = $path;
+			$file->folder->getSizeOfFiles();
+			if($oldFolder){
+			    $oldFolder->getSizeOfFiles();
+			}
 		}
             }
 

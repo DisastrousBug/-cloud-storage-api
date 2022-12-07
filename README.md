@@ -43,3 +43,10 @@ By default api will be opened at <url>http://localhost</url>
 
 <br>
 P.S Postman data located in postman file;
+
+P.P.S.
+To get postgresql host local ip through docker command use: <br>
+
+docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq) <br>
+
+And paste into .env provided ip address for pgsql connection (DB_HOST) <br>
