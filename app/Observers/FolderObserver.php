@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Helpers\FileHelper;
 use App\Models\Folder;
 
 class FolderObserver
@@ -36,7 +37,16 @@ class FolderObserver
      */
     public function deleted(Folder $folder)
     {
-        //
+        $files = $folder->files;
+        $fileHelper = new FileHelper(null, $folder->user);
+
+        foreach($files as $file){
+            $data['folder_id'] = null;
+
+            $res = $fileHelper->updateFile($file, $data);
+        }
+
+        exec('rm -rf ' . $folder->path);
     }
 
     /**
