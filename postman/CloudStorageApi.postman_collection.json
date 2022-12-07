@@ -1,0 +1,315 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CloudStorageApi",
+		"_postman_id": "e74eb3e0-fce6-8e40-4406-7efc1c90599a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User/Profile",
+			"description": "Routes to register/auth, profile routes ",
+			"item": [
+				{
+					"name": "Get Token",
+					"request": {
+						"url": "http://94.228.124.202/api/v1/token",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "disastrous3998@gmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "qqq123qqq",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "device_name",
+									"value": "Iphone",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Registration",
+					"request": {
+						"url": "http://94.228.124.202/api/v1/registration",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": "",
+								"disabled": true
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "name",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "disastrous3@gmail.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password1",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Profile get",
+					"request": {
+						"url": "",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Files",
+			"description": "",
+			"item": [
+				{
+					"name": "Upload File",
+					"request": {
+						"url": "http://94.228.124.202/api/v1/files/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|2pFJhJGw55BAe7xPiFDIC126ueTG5MkgAwvuOxMT",
+								"description": ""
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"description": "Required",
+									"type": "file",
+									"src": "articles-2.csv"
+								},
+								{
+									"key": "folder_id",
+									"value": "10",
+									"description": "Optional",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "delete_at",
+									"value": "2022-12-06 16:50:32",
+									"description": "Optional",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "File DELETE",
+					"request": {
+						"url": "http://94.228.124.202/api/v1/files/{id}",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg",
+								"description": ""
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update file",
+					"request": {
+						"url": "http://94.228.124.202/api/v1/files/{id}",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg",
+								"description": ""
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "folder_id",
+									"value": "10",
+									"description": "Optiona"
+								},
+								{
+									"key": "delete_at",
+									"value": "2022-12-06 16:50:32",
+									"description": "Optional"
+								},
+								{
+									"key": "name",
+									"value": "name",
+									"description": "Required"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get files",
+					"request": {
+						"url": "",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "with {bool} tree_view param can show list of folders with files (Files w/o folders are shown in the first depth level)"
+					},
+					"response": []
+				},
+				{
+					"name": "GET File",
+					"request": {
+						"url": "http://94.228.124.202/api/v1/files/5",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg",
+								"description": ""
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Folders",
+			"description": "",
+			"item": [
+				{
+					"name": "CREATE Folder",
+					"request": {
+						"url": "",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE Folder",
+					"request": {
+						"url": "http://94.228.124.202/api/v1/folders",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg",
+								"description": ""
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "folder",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
