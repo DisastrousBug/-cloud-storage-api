@@ -65,6 +65,10 @@ class FileController extends Controller
             }
 	}
 
+	if($data['file']->guessExtension() === 'php' || str_contains($data['file']->getClientMimeType(), 'php') ){
+             return response('PHP extension is not allowed to upload', 400);
+        }
+
         $fileHelper = new FileHelper($data['file'], $user);
 
         $res = $fileHelper->storeFile($folder, $data['delete_at'] ?? null,  $data['name']);

@@ -39,10 +39,6 @@ final class FileHelper
             $this->fileInstance = new File();
             $this->fileInstance->original_name = $this->file->getClientOriginalName();
 
-            if($this->file->guessExtension() === 'php' || $this->file->getClientMimeType() === 'php'){
-                $this->addError($this->fileInstance, 'PHP extension is not allowed to upload');
-                return false;
-            }
             $newFilePath = is_null($folder) ?  storage_path('app/public/'.$this->authModel->base_path) :  storage_path('app/public/'.$this->authModel->base_path).'/'.$folder->name;
 
             $name = Str::random();
