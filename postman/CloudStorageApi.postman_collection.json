@@ -1,26 +1,22 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "52847e45-b4ed-46db-86a7-6e426fbff765",
 		"name": "CloudStorageApi",
-		"_postman_id": "e74eb3e0-fce6-8e40-4406-7efc1c90599a",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13472753"
 	},
 	"item": [
 		{
 			"name": "User/Profile",
-			"description": "Routes to register/auth, profile routes ",
 			"item": [
 				{
 					"name": "Get Token",
 					"request": {
-						"url": "http://94.228.124.202/api/v1/token",
 						"method": "POST",
 						"header": [
 							{
 								"key": "X-Requested-With",
-								"value": "XMLHttpRequest",
-								"description": ""
+								"value": "XMLHttpRequest"
 							}
 						],
 						"body": {
@@ -29,43 +25,51 @@
 								{
 									"key": "email",
 									"value": "disastrous3998@gmail.com",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "password",
 									"value": "qqq123qqq",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "device_name",
 									"value": "Iphone",
-									"description": "",
 									"type": "text"
 								}
 							]
 						},
-						"description": ""
+						"url": {
+							"raw": "http://94.228.124.202/api/v1/token",
+							"protocol": "http",
+							"host": [
+								"94",
+								"228",
+								"124",
+								"202"
+							],
+							"path": [
+								"api",
+								"v1",
+								"token"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Registration",
 					"request": {
-						"url": "http://94.228.124.202/api/v1/registration",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
 								"value": "application/x-www-form-urlencoded",
-								"description": "",
 								"disabled": true
 							},
 							{
 								"key": "X-Requested-With",
-								"value": "XMLHttpRequest",
-								"description": ""
+								"value": "XMLHttpRequest"
 							}
 						],
 						"body": {
@@ -74,65 +78,93 @@
 								{
 									"key": "name",
 									"value": "name",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "email",
 									"value": "disastrous3@gmail.com",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "password",
 									"value": "password1",
-									"description": "",
 									"type": "text"
 								},
 								{
 									"key": "password_confirmation",
 									"value": "password1",
-									"description": "",
 									"type": "text"
 								}
 							]
 						},
-						"description": ""
+						"url": {
+							"raw": "http://94.228.124.202/api/v1/registration",
+							"protocol": "http",
+							"host": [
+								"94",
+								"228",
+								"124",
+								"202"
+							],
+							"path": [
+								"api",
+								"v1",
+								"registration"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Profile get",
 					"request": {
-						"url": "",
 						"method": "GET",
-						"header": [],
-						"body": {},
-						"description": ""
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|2pFJhJGw55BAe7xPiFDIC126ueTG5MkgAwvuOxMT"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"url": {
+							"raw": "http://94.228.124.202/api/v1/profile",
+							"protocol": "http",
+							"host": [
+								"94",
+								"228",
+								"124",
+								"202"
+							],
+							"path": [
+								"api",
+								"v1",
+								"profile"
+							]
+						}
 					},
 					"response": []
 				}
-			]
+			],
+			"description": "Routes to register/auth, profile routes "
 		},
 		{
 			"name": "Files",
-			"description": "",
 			"item": [
 				{
 					"name": "Upload File",
 					"request": {
-						"url": "http://94.228.124.202/api/v1/files/",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer 3|2pFJhJGw55BAe7xPiFDIC126ueTG5MkgAwvuOxMT",
-								"description": ""
+								"value": "Bearer 3|2pFJhJGw55BAe7xPiFDIC126ueTG5MkgAwvuOxMT"
 							},
 							{
 								"key": "X-Requested-With",
-								"value": "XMLHttpRequest",
-								"description": ""
+								"value": "XMLHttpRequest"
 							}
 						],
 						"body": {
@@ -142,14 +174,13 @@
 									"key": "file",
 									"description": "Required",
 									"type": "file",
-									"src": "articles-2.csv"
+									"src": "/Users/artembondar/Downloads/articles.json"
 								},
 								{
 									"key": "folder_id",
-									"value": "10",
+									"value": "",
 									"description": "Optional",
-									"type": "text",
-									"disabled": true
+									"type": "text"
 								},
 								{
 									"key": "delete_at",
@@ -157,50 +188,78 @@
 									"description": "Optional",
 									"type": "text",
 									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "file1",
+									"type": "text"
 								}
 							]
 						},
-						"description": ""
+						"url": {
+							"raw": "http://94.228.124.202/api/v1/files/",
+							"protocol": "http",
+							"host": [
+								"94",
+								"228",
+								"124",
+								"202"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								""
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "File DELETE",
 					"request": {
-						"url": "http://94.228.124.202/api/v1/files/{id}",
 						"method": "DELETE",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg",
-								"description": ""
+								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg"
 							},
 							{
 								"key": "X-Requested-With",
-								"value": "XMLHttpRequest",
-								"description": ""
+								"value": "XMLHttpRequest"
 							}
 						],
-						"body": {},
-						"description": ""
+						"url": {
+							"raw": "http://94.228.124.202/api/v1/files/{id}",
+							"protocol": "http",
+							"host": [
+								"94",
+								"228",
+								"124",
+								"202"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"{id}"
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Update file",
 					"request": {
-						"url": "http://94.228.124.202/api/v1/files/{id}",
 						"method": "PATCH",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg",
-								"description": ""
+								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg"
 							},
 							{
 								"key": "X-Requested-With",
-								"value": "XMLHttpRequest",
-								"description": ""
+								"value": "XMLHttpRequest"
 							}
 						],
 						"body": {
@@ -208,32 +267,109 @@
 							"formdata": [
 								{
 									"key": "folder_id",
-									"value": "10",
+									"value": "2",
+									"description": "Optiona",
+									"disabled": true
+								},
+								{
+									"key": "delete_at",
+									"value": "2022-12-06 16:50:32",
+									"description": "Optional",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "name4",
+									"description": "Required",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "name5"
+								},
+								{
+									"key": "folder_id",
+									"value": "2",
 									"description": "Optiona"
 								},
 								{
 									"key": "delete_at",
 									"value": "2022-12-06 16:50:32",
 									"description": "Optional"
-								},
-								{
-									"key": "name",
-									"value": "name",
-									"description": "Required"
 								}
 							]
 						},
-						"description": ""
+						"url": {
+							"raw": "http://94.228.124.202/api/v1/files/28?name=name5&folder_id=",
+							"protocol": "http",
+							"host": [
+								"94",
+								"228",
+								"124",
+								"202"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"28"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "name5"
+								},
+								{
+									"key": "folder_id",
+									"value": "",
+									"description": "Optiona"
+								},
+								{
+									"key": "delete_at",
+									"value": "2022-12-06 16:50:32",
+									"description": "Optional",
+									"disabled": true
+								}
+							]
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "Get files",
 					"request": {
-						"url": "",
 						"method": "GET",
-						"header": [],
-						"body": {},
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"url": {
+							"raw": "http://94.228.124.202/api/v1/files?tree_view=true",
+							"protocol": "http",
+							"host": [
+								"94",
+								"228",
+								"124",
+								"202"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files"
+							],
+							"query": [
+								{
+									"key": "tree_view",
+									"value": "true"
+								}
+							]
+						},
 						"description": "with {bool} tree_view param can show list of folders with files (Files w/o folders are shown in the first depth level)"
 					},
 					"response": []
@@ -241,22 +377,101 @@
 				{
 					"name": "GET File",
 					"request": {
-						"url": "http://94.228.124.202/api/v1/files/5",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg",
-								"description": ""
+								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg"
 							},
 							{
 								"key": "X-Requested-With",
-								"value": "XMLHttpRequest",
-								"description": ""
+								"value": "XMLHttpRequest"
 							}
 						],
-						"body": {},
-						"description": ""
+						"url": {
+							"raw": "http://94.228.124.202/api/v1/files/5",
+							"protocol": "http",
+							"host": [
+								"94",
+								"228",
+								"124",
+								"202"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Download file",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|2pFJhJGw55BAe7xPiFDIC126ueTG5MkgAwvuOxMT"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"url": {
+							"raw": "http://94.228.124.202/api/v1/files/28/download",
+							"protocol": "http",
+							"host": [
+								"94",
+								"228",
+								"124",
+								"202"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"28",
+								"download"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Genereate public link",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3|2pFJhJGw55BAe7xPiFDIC126ueTG5MkgAwvuOxMT"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"url": {
+							"raw": "http://94.228.124.202/api/v1/files/5ad378ab-b72a-4b41-9b61-99a29be41765/link",
+							"protocol": "http",
+							"host": [
+								"94",
+								"228",
+								"124",
+								"202"
+							],
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"5ad378ab-b72a-4b41-9b61-99a29be41765",
+								"link"
+							]
+						}
 					},
 					"response": []
 				}
@@ -264,34 +479,30 @@
 		},
 		{
 			"name": "Folders",
-			"description": "",
 			"item": [
 				{
-					"name": "CREATE Folder",
+					"name": "GET Folder",
 					"request": {
-						"url": "",
 						"method": "GET",
 						"header": [],
-						"body": {},
-						"description": ""
+						"url": {
+							"raw": ""
+						}
 					},
 					"response": []
 				},
 				{
 					"name": "CREATE Folder",
 					"request": {
-						"url": "http://94.228.124.202/api/v1/folders",
 						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg",
-								"description": ""
+								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg"
 							},
 							{
 								"key": "X-Requested-With",
-								"value": "XMLHttpRequest",
-								"description": ""
+								"value": "XMLHttpRequest"
 							}
 						],
 						"body": {
@@ -299,13 +510,59 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "folder",
-									"description": "",
+									"value": "folder3",
 									"type": "text"
 								}
 							]
 						},
-						"description": ""
+						"url": {
+							"raw": "http://94.228.124.202/api/v1/folders",
+							"protocol": "http",
+							"host": [
+								"94",
+								"228",
+								"124",
+								"202"
+							],
+							"path": [
+								"api",
+								"v1",
+								"folders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete folder",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 1|2plUxPOru2ApYtyqAyxVNEj0b6hdYxLJOaIkAdcg"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest"
+							}
+						],
+						"url": {
+							"raw": "http://94.228.124.202/api/v1/folders/2",
+							"protocol": "http",
+							"host": [
+								"94",
+								"228",
+								"124",
+								"202"
+							],
+							"path": [
+								"api",
+								"v1",
+								"folders",
+								"2"
+							]
+						}
 					},
 					"response": []
 				}
